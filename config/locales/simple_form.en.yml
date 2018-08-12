@@ -1,0 +1,11 @@
+en:
+  simple_form:
+    labels:
+      user:
+        name: 'お名前'
+        age: '年齢'
+        mail: 'メール'
+        adress: 'お住まい'
+        gender: '性別'
+        program: '得意言語'
+        skils: 'スキル'

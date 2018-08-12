@@ -1,0 +1,47 @@
+<h1>hello world</h1>
+
+<% @user.each do |user| %>
+	<p>
+		<%= user.id %>：<%= user.name %>：<%= user.age %>：<%= user.adress %>：<%= user.gender %>：<%= user.program %>：<%= user.skils %>：<%= user.mail %>
+	</p>
+<% end %>
+
+<%= link_to "Sign up", '#', class: "btn btn-info" %>
+
+<div class="table-responsive">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>名前</th>
+				<th>年齢</th>
+				<th>メール</th>
+				<th>住所</th>
+				<th>性別</th>
+				<th>得意言語</th>
+				<th>スキル</th>
+				<th>写真</th>
+				<th>編集</th>
+				<th>削除</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @user.each.with_index(1) do |user, i| %>
+			<tr>
+				<th><%= i %></th>
+				<th><%= user.name %></th>
+				<th><%= user.age %></th>
+				<th><%= user.mail %></th>
+				<th><%= user.adress %></th>
+				<th><%= user.gender %></th>
+				<th><%= user.program %></th>
+				<th><%= user.skils %></th>
+				<th><%= image_tag user.image_url(:thumb) %></th>
+				<th><%= link_to '編集' , "/users/#{user.id}/edit" , method: :get %></th>
+				<th><%= link_to '削除' , "/users/#{user.id}" , method: :delete %></th>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
